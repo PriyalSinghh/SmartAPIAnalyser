@@ -1,0 +1,39 @@
+{
+  "name": "smart-api-analyzer-backend",
+  "version": "2.0.0",
+  "description": "SmartAPI - Production-Scale API Failure Analyzer (Express, PostgreSQL, Redis)",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "db:init": "node src/db/initDb.js",
+    "db:migrate": "node src/db/migrate.js",
+    "seed": "node src/db/seed.js",
+    "seed:large": "node src/db/seedLarge.js",
+    "test": "node --test --test-force-exit tests/**/*.test.js"
+  },
+  "keywords": [
+    "api-monitoring",
+    "failure-analyzer",
+    "express",
+    "postgresql",
+    "redis",
+    "observability",
+    "anomaly-detection"
+  ],
+  "author": "SmartAPI Team",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "ioredis": "^5.4.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "supertest": "^7.0.0"
+  }
+}
