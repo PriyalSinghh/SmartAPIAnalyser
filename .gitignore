@@ -1,15 +1,40 @@
 # Dependencies
 node_modules/
+frontend/node_modules/
+backend/node_modules/
 
 # Environment and local configuration
 .env
 .env.*
 !.env.example
+backend/.env
+backend/.env.*
+frontend/.env
+frontend/.env.*
 
 # Build outputs and coverage
 dist/
 build/
 coverage/
+frontend/dist/
+frontend/build/
+backend/dist/
+backend/build/
+
+# Frontend tooling
+.vite/
+.cache/
+*.tsbuildinfo
+.eslintcache
+
+# Backend / runtime artifacts
+*.sqlite
+*.db
+uploads/
+tmp/
+sessions/
+*.pem
+*.key
 
 # Logs
 *.log
@@ -21,3 +46,4 @@ yarn-error.log*
 .DS_Store
 .vscode/
 .idea/
+
