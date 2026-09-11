@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const path = require('path');
 
 dotenv.config({ path: path.resolve(__dirname, '../../.env') });
+dotenv.config({ path: path.resolve(__dirname, '../../../.env') });
 
 const DEFAULT_TTL = parseInt(process.env.CACHE_TTL_SECONDS, 10) || 60;
 
@@ -10,8 +11,9 @@ let redisClient = null;
 let isRedisAvailable = false;
 
 try {
-  const redisConfig = process.env.REDIS_URL
-    ? process.env.REDIS_URL
+  const connectionUrl = process.env.KV_URL || process.env.REDIS_URL;
+  const redisConfig = connectionUrl
+    ? connectionUrl
     : {
         host: process.env.REDIS_HOST || 'localhost',
         port: parseInt(process.env.REDIS_PORT, 10) || 6379,
